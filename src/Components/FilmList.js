@@ -25,9 +25,9 @@ export default class FilmList extends React.Component {
                         <a class="pure-menu-heading" href="#">Star Wars Wiki</a>
 
                         <ul class="pure-menu-list">
-                            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Movies</a></li>
-                            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Directors</a></li>
-                            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Release</a></li>
+                            <li class="pure-menu-item"><a href="#" class="pure-menu-link">opening_crawl </a></li>
+                            <li class="pure-menu-item"><a href="#" class="pure-menu-link">director </a></li>
+                            <li class="pure-menu-item"><a href="#" class="pure-menu-link">release_date </a></li>
                         </ul>
                     </div>
                 </div>
