@@ -1,5 +1,4 @@
 import React from 'react';
-
 import axios from 'axios';
 
 export default class FilmList extends React.Component {
@@ -7,20 +6,47 @@ export default class FilmList extends React.Component {
         films: []
     }
     
-   async componentDidMount () {
+    componentDidMount () {
         axios.get('https://swapi.co/api/films').then(res => {
-            console.log(res)
-            this.setState({ 
-                films: [res.data] 
-            })
+            const films = res.data.results
+            this.setState({ films })
         })
     }
 
     render() {
         return(
-            <ul>
-                { this.state.films.map(film => <li key={film.episode_id}>{film.title}</li>)}
-            </ul>
+            <div id="layout">
+                 <a href="#menu" id="menuLink" class="menu-link">
+                    <span></span>
+                </a>
+
+                <div id="menu">
+                    <div class="pure-menu">
+                        <a class="pure-menu-heading" href="#">Star Wars Wiki</a>
+
+                        <ul class="pure-menu-list">
+                            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Movies</a></li>
+                            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Directors</a></li>
+                            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Release dates</a></li>
+                        </ul>
+                    </div>
+                </div>
+                   
+                <div id="main">
+                    <header>
+                        <h1>Star Wars WIKI</h1>
+                        <h2>A guide to Star Wars Franchise</h2>
+                    </header>
+                    <div class="content">
+                    <il>
+                    { this.state.films.map(film => 
+                        <li key = {film.episode_id}> {film.title}</li>)}
+                    </il>
+
+                    </div>
+                </div>
+            </div>
+
         )
     }
 }
