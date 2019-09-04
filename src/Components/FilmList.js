@@ -19,7 +19,7 @@ export default class FilmList extends React.Component {
     render() {
         return(
             <ul>
-                { this.state.films.map(film => <li>{film.title}</li>)}
+                { this.state.films.map(film => <li key={film.episode_id}>{film.title}</li>)}
             </ul>
         )
     }
