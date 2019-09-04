@@ -27,7 +27,7 @@ export default class FilmList extends React.Component {
                         <ul class="pure-menu-list">
                             <li class="pure-menu-item"><a href="#" class="pure-menu-link">Movies</a></li>
                             <li class="pure-menu-item"><a href="#" class="pure-menu-link">Directors</a></li>
-                            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Release dates</a></li>
+                            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Release</a></li>
                         </ul>
                     </div>
                 </div>
@@ -38,10 +38,12 @@ export default class FilmList extends React.Component {
                         <h2>A guide to Star Wars Franchise</h2>
                     </header>
                     <div class="content">
-                    <il>
-                    { this.state.films.map(film => 
-                        <li key = {film.episode_id}> {film.title}</li>)}
-                    </il>
+                    { this.state.films.map((film) =>(
+                        <div className="Card-body">
+                            <h5>{film.title}</h5>
+                            <h6>{film.opening_crawl }</h6>
+                        </div>
+                    ))}
 
                     </div>
                 </div>
