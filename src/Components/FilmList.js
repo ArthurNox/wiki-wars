@@ -5,7 +5,10 @@ export default class FilmList extends React.Component {
     
     state = {
         films: [],
-        showMe: false
+        showMeOpening: true,
+        showMeDate: true,
+        showMeDirector: true,
+        showMeProducer: true
     }
     
     componentDidMount () {
@@ -15,11 +18,24 @@ export default class FilmList extends React.Component {
             }) })
         })
     }
-    operation(){
-        if(this.state.showMe == false){
-            this.setState({showMe: true})
-        }else{
-            this.setState({showMe: false})
+    toggleInfo(info){
+        switch(info){
+            case 1:
+                return this.setState({
+                    showMeOpening:!this.state.showMeOpening
+                })
+            case 2:
+                return this.setState({
+                    showMeDate:!this.state.showMeDate
+                })
+            case 3:
+                    return this.setState({
+                        showMeDirector:!this.state.showMeDirector
+                    })
+            case 4:
+                    return this.setState({
+                        showMeProducer:!this.state.showMeProducer
+                    })
         }
       }
 
@@ -31,9 +47,10 @@ export default class FilmList extends React.Component {
                         <a className="pure-menu-heading" href="#">Wiki Wars</a>
 
                         <ul className="pure-menu-list">
-                            <div className="button_cont" onClick={()=>this.operation()}><a href="#" class="pure-menu-link">Openig Crawl</a></div>
-                            <div className="button_cont" onClick={()=>this.operation()}><a href="#" class="pure-menu-link">Director</a></div>
-                            <div className="button_cont" onClick={()=>this.operation()}><a href="#" class="pure-menu-link">Release Date</a></div>
+                            <div className="button_cont" onClick={()=>this.toggleInfo(1)}><a href="#" className="pure-menu-link">Openig Crawl</a></div>
+                            <div className="button_cont" onClick={()=>this.toggleInfo(2)}><a href="#" className="pure-menu-link">Release Date</a></div>
+                            <div className="button_cont" onClick={()=>this.toggleInfo(3)}><a href="#" className="pure-menu-link">Director</a></div>
+                            <div className="button_cont" onClick={()=>this.toggleInfo(4)}><a href="#" className="pure-menu-link">Producer</a></div>
                         </ul>
                     </div>
                 </div>
@@ -48,12 +65,18 @@ export default class FilmList extends React.Component {
                     { this.state.films.map((film) => (
                         <div className="Card-body" key={film.episode_id}>
                             <h3>{film.title}</h3>
-                            {this.state.showMe 
-                                ? <p>{film.opening_crawl}</p>
-                                : null
+                            {this.state.showMeOpening 
+                                && <p>{film.opening_crawl}</p>
                             }
-                            <p><strong>Director:</strong> {film.director}</p>
-                            <p><strong>Release Date:</strong> {film.release_date}</p>
+                            {this.state.showMeDate 
+                                && <p><strong>Release Date:</strong> {film.release_date}</p>
+                            }
+                            {this.state.showMeDirector 
+                                && <p><strong>Director:</strong> {film.director}</p>
+                            }
+                            {this.state.showMeProducer 
+                                && <p><strong>Producer:</strong> {film.producer}</p>
+                            }
                         </div>
                     ))}
 
