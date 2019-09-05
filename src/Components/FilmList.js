@@ -2,8 +2,10 @@ import React from 'react';
 import axios from 'axios';
 
 export default class FilmList extends React.Component {
+    
     state = {
-        films: []
+        films: [],
+        showMe: false
     }
     
     componentDidMount () {
@@ -13,6 +15,13 @@ export default class FilmList extends React.Component {
             }) })
         })
     }
+    operation(){
+        if(this.state.showMe == false){
+            this.setState({showMe: true})
+        }else{
+            this.setState({showMe: false})
+        }
+      }
 
     render() {
         return(
@@ -22,9 +31,9 @@ export default class FilmList extends React.Component {
                         <a className="pure-menu-heading" href="#">Wiki Wars</a>
 
                         <ul className="pure-menu-list">
-                            <li className="pure-menu-item"><a href="#" className="pure-menu-link">opening_crawl </a></li>
-                            <li className="pure-menu-item"><a href="#" className="pure-menu-link">director </a></li>
-                            <li className="pure-menu-item"><a href="#" value="release_date" className="pure-menu-link">release_date </a></li>
+                            <div className="button_cont" onClick={()=>this.operation()}><a href="#" class="pure-menu-link">Openig Crawl</a></div>
+                            <div className="button_cont" onClick={()=>this.operation()}><a href="#" class="pure-menu-link">Director</a></div>
+                            <div className="button_cont" onClick={()=>this.operation()}><a href="#" class="pure-menu-link">Release Date</a></div>
                         </ul>
                     </div>
                 </div>
@@ -38,10 +47,13 @@ export default class FilmList extends React.Component {
                     <div className="content">
                     { this.state.films.map((film) => (
                         <div className="Card-body" key={film.episode_id}>
-                            <h4>Title: {film.title}</h4>
-                            <h6>{film.opening_crawl}</h6>
-                            <h6>Director: {film.director}</h6>
-                            <h6>Release Date: {film.release_date}</h6>
+                            <h3>{film.title}</h3>
+                            {this.state.showMe 
+                                ? <p>{film.opening_crawl}</p>
+                                : null
+                            }
+                            <p><strong>Director:</strong> {film.director}</p>
+                            <p><strong>Release Date:</strong> {film.release_date}</p>
                         </div>
                     ))}
 
