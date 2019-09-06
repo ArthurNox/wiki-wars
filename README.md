@@ -1,3 +1,21 @@
+                                            ##################### ReadME ##########################
+
+######## Rodando o projeto ########
+
+Para rodar o projeto é necessário ter instalado algum gerenciador de pacotes como o npm ou o yarn, vamos assumir que o escolhido foi o npm do Node.js, já que o ele também é necessário para rodar o servidor do projeto.
+
+Após baixar o repositório você deve rodar o comando "npm install" no diretório do projeto para instalar as dependências necessárias. 
+
+Então é só rodar o comando "npm start" para inicializar o projeto. 
+
+######## Funcionalidades do Projeto #########
+
+A página carrega as informações técnicas relevantes ao filme , como diretor e data de lançamento, caso você não queira ver alguma destas informações, no menu lateral você pode remover clicando no nome da informação.
+
+####### ReadMe React #######
+
+A seguir o README gerado ao criar o projet com "create-react-app", acho interessante deixar o estas informações dinsponíveis para consulta de eventuais comandos úteis do React.  
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

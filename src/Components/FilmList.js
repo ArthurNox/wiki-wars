@@ -45,7 +45,6 @@ export default class FilmList extends React.Component {
                 <div id="menu">
                     <div className="pure-menu">
                         <a className="pure-menu-heading" href="#">Wiki Wars</a>
-
                         <ul className="pure-menu-list">
                             <div className="button_cont" onClick={()=>this.toggleInfo(1)}><a href="#" className="pure-menu-link">Openig Crawl</a></div>
                             <div className="button_cont" onClick={()=>this.toggleInfo(2)}><a href="#" className="pure-menu-link">Release Date</a></div>
@@ -63,7 +62,7 @@ export default class FilmList extends React.Component {
 
                     <div className="content">
                     { this.state.films.map((film) => (
-                        <div className="Card-body" key={film.episode_id}>
+                        <div id="Card-body" key={film.episode_id}>
                             <h3>{film.title}</h3>
                             {this.state.showMeOpening 
                                 && <p>{film.opening_crawl}</p>

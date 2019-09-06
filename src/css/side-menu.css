@@ -6,6 +6,9 @@ body {
     max-width: 100%;
     height: auto;
 }
+div#Card-body{
+    margin-bottom: inherit;
+}
 
 button {
     color: #fff !important;
