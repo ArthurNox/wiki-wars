@@ -12,6 +12,10 @@ Então é só rodar o comando "npm start" para inicializar o projeto.
 
 A página carrega as informações técnicas relevantes ao filme , como diretor e data de lançamento, caso você não queira ver alguma destas informações, no menu lateral você pode remover clicando no nome da informação.
 
+####### Teste Unitário  #######
+
+Tive problemas com o Jest, ao tentar rodar a aplicação com ele no projeto gerava um erro de versão que eu não consegui resolver, então para não prejudicar o restante do projeto removi a última versão dele.
+
 ####### ReadMe React #######
 
 A seguir o README gerado ao criar o projet com "create-react-app", acho interessante deixar o estas informações dinsponíveis para consulta de eventuais comandos úteis do React.  
