@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './css/pure-min.css';
-import './css/side-menu.css';
+import './css/components.css';
 
 import FilmContent from './components/FilmContent'
 

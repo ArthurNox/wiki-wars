@@ -32,7 +32,7 @@ export default class FilmContent extends React.Component {
                 loading: false
             })
         } catch (err) {
-
+            this.setState({loading: true})
         }
     }
 
