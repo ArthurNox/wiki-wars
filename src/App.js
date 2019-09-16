@@ -1,13 +1,21 @@
 import React from 'react';
+
 import './css/pure-min.css';
 import './css/side-menu.css';
 
-import FilmList from './Components/FilmList'
+import FilmContent from './components/FilmContent'
 
 function App() {
   return (
-    <div className="App">
-      <FilmList />
+    <div id="layout">
+        <div id="main">              
+          <div className="header">
+              <h1>Star Wars Wiki</h1>
+              <h2>A Guide to the Star Wars Film Franchise</h2>
+          </div>
+
+          <FilmContent />
+        </div>
     </div>
   );
 }
