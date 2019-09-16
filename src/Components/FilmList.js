@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios';
+import {get} from '../services/API.js';
 
 export default class FilmList extends React.Component {
     
@@ -12,11 +12,12 @@ export default class FilmList extends React.Component {
     }
     
     componentDidMount () {
-        axios.get('https://swapi.co/api/films').then(res => {
+        get('https://swapi.co/api/films').then(res => {
             this.setState({ films: res.data.results.sort(function(a, b){
                 if (a.episode_id < b.episode_id) return -1;
             }) })
         })
+        
     }
     toggleInfo(info){
         switch(info){
