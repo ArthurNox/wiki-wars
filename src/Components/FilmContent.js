@@ -2,7 +2,7 @@ import React from 'react';
 
 import { get } from '../services/API.js';
 
-import SideMenu from './SideMenu'
+import {SideMenu} from './SideMenu'
 
 export default class FilmContent extends React.Component {
     
